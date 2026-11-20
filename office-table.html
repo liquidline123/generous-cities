@@ -42,9 +42,17 @@ td.job{font-weight:600}
 .sec .note{margin-top:.9rem}
 @media(max-width:600px){body{padding:1rem}.rings,.rings.two{grid-template-columns:1fr 1fr}.ring svg{max-width:110px}}
 .note a{color:inherit;text-decoration:underline;text-underline-offset:2px}.note a:hover{color:var(--red)}
+.tabs{display:inline-flex;flex-wrap:wrap;gap:4px;padding:4px;border:1px solid var(--grey);border-radius:999px;margin:0 0 1.25rem}
+.tabs button{font:500 14px Poppins,Arial,sans-serif;padding:6px 18px;border:0;border-radius:999px;background:none;cursor:pointer;color:var(--black)}
+.tabs button[aria-selected=true]{background:var(--black);color:#fff}
+.tabs button:focus-visible{outline:2px solid var(--red);outline-offset:2px}
+[role=tabpanel][hidden]{display:none}
+@media(max-width:600px){.tabs button{padding:6px 14px;font-size:13px}}
 </style>
 </head>
 <body>
+<div class="tabs" role="tablist" aria-label="Office charts"><button type="button" role="tab" id="tab1" aria-controls="p1" aria-selected="true">Who makes the tea</button><button type="button" role="tab" id="tab2" aria-controls="p2" aria-selected="false" tabindex="-1">Kindness at work</button></div>
+<div role="tabpanel" id="p1" aria-labelledby="tab1">
 <h1>Who Makes the <em>Tea</em>?</h1>
 <p class="sub">All 18 jobs, ranked by how likely their workers are to take a turn at the tea round.</p>
 <div class="wrap"><table>
@@ -70,12 +78,17 @@ td.job{font-weight:600}
 <tr><td class="rk">18</td><td class="job">Head teachers</td><td class="r">50%</td></tr>
 </tbody></table></div>
 <p class="note"><strong>Source:</strong> <a href="https://liquidline.co.uk/news/generous-cities/" target="_blank" rel="noopener">Liquidline Generosity Study</a>. <strong>Additional sources:</strong> Tetley, Yorkshire Tea, Citation HR, Office Freedom, Cartwright and Butler, Arla and E.ON.</p>
-<div class="sec"><h2>Small <em>Kindnesses</em> at Work</h2>
+</div>
+<div role="tabpanel" id="p2" aria-labelledby="tab2" hidden>
+<h1>Kindness at <em>Work</em></h1>
+<p class="sub">What office workers say about small acts of kindness and saying thanks.</p>
+<div class="sec"><h2>Small <em>Kindnesses</em></h2>
 <div class="rings"><figure class="ring"><svg viewBox="0 0 100 100" role="img" aria-label="One kind act can turn my day around: 74%"><circle cx="50" cy="50" r="42" fill="none" stroke="#eae9e9" stroke-width="11"/><circle cx="50" cy="50" r="42" fill="none" stroke="#e30613" stroke-width="11" stroke-linecap="round" stroke-dasharray="195.3 263.9" transform="rotate(-90 50 50)"/><text x="50" y="56" text-anchor="middle" font-family="Poppins,Arial,sans-serif" font-weight="700" font-size="20" fill="#000604">74%</text></svg><figcaption>One kind act can turn my day around</figcaption></figure><figure class="ring"><svg viewBox="0 0 100 100" role="img" aria-label="Kindness boosts team morale: 68%"><circle cx="50" cy="50" r="42" fill="none" stroke="#eae9e9" stroke-width="11"/><circle cx="50" cy="50" r="42" fill="none" stroke="#e30613" stroke-width="11" stroke-linecap="round" stroke-dasharray="179.4 263.9" transform="rotate(-90 50 50)"/><text x="50" y="56" text-anchor="middle" font-family="Poppins,Arial,sans-serif" font-weight="700" font-size="20" fill="#000604">68%</text></svg><figcaption>Kindness boosts team morale</figcaption></figure><figure class="ring"><svg viewBox="0 0 100 100" role="img" aria-label="Kindness is overlooked at work: 62%"><circle cx="50" cy="50" r="42" fill="none" stroke="#eae9e9" stroke-width="11"/><circle cx="50" cy="50" r="42" fill="none" stroke="#e30613" stroke-width="11" stroke-linecap="round" stroke-dasharray="163.6 263.9" transform="rotate(-90 50 50)"/><text x="50" y="56" text-anchor="middle" font-family="Poppins,Arial,sans-serif" font-weight="700" font-size="20" fill="#000604">62%</text></svg><figcaption>Kindness is overlooked at work</figcaption></figure></div>
 <p class="note"><strong>Source:</strong> instantprint.</p></div>
-<div class="sec"><h2>Saying <em>Thank You</em> at Work</h2>
+<div class="sec"><h2>Saying <em>Thank You</em></h2>
 <div class="rings two"><figure class="ring"><svg viewBox="0 0 100 100" role="img" aria-label="Always thank a colleague for making a cup of tea: 49%"><circle cx="50" cy="50" r="42" fill="none" stroke="#eae9e9" stroke-width="11"/><circle cx="50" cy="50" r="42" fill="none" stroke="#e30613" stroke-width="11" stroke-linecap="round" stroke-dasharray="129.3 263.9" transform="rotate(-90 50 50)"/><text x="50" y="56" text-anchor="middle" font-family="Poppins,Arial,sans-serif" font-weight="700" font-size="20" fill="#000604">49%</text></svg><figcaption>Always thank a colleague for making a cup of tea</figcaption></figure><figure class="ring"><svg viewBox="0 0 100 100" role="img" aria-label="Always thank someone for help with a small task: 46%"><circle cx="50" cy="50" r="42" fill="none" stroke="#eae9e9" stroke-width="11"/><circle cx="50" cy="50" r="42" fill="none" stroke="#e30613" stroke-width="11" stroke-linecap="round" stroke-dasharray="121.4 263.9" transform="rotate(-90 50 50)"/><text x="50" y="56" text-anchor="middle" font-family="Poppins,Arial,sans-serif" font-weight="700" font-size="20" fill="#000604">46%</text></svg><figcaption>Always thank someone for help with a small task</figcaption></figure></div>
 <p class="note"><strong>Source:</strong> Moonpig.</p></div>
+</div>
 <div class="tools"><button type="button" id="embedBtn" aria-expanded="false">Embed this page</button><span class="status" id="status" role="status"></span></div>
 <div class="embed" id="embedBox" role="dialog" aria-label="Embed this page"><p>Copy this code and paste it into your page.</p><textarea id="embedCode" readonly></textarea><div class="r2"><button type="button" id="copyBtn">Copy code</button><button type="button" id="embedClose">Close</button></div></div>
 <div class="brand"><a href="https://liquidline.co.uk/news/generous-cities/" target="_blank" rel="noopener"><img alt="Liquidline" src="liquidline-logo.png"></a></div>
@@ -85,7 +98,7 @@ var PAGE="https://liquidline123.github.io/generous-cities/office-table.html",STU
 function $(i){return document.getElementById(i)}
 if(window.self!==window.top){$('embedBtn').style.display='none'}
 function say(m){$('status').textContent=m;setTimeout(function(){if($('status').textContent===m)$('status').textContent=''},4000)}
-$('embedBtn').onclick=function(){var b=$('embedBox'),o=b.classList.toggle('open');this.setAttribute('aria-expanded',o);if(o){$('embedCode').value='<style>.ll-off{height:1520px}@media(max-width:700px){.ll-off{height:1700px}}</style>\n<iframe class="ll-off" src="'+PAGE+'" title="At the office \u2013 Liquidline" width="100%" style="border:0;width:100%;" loading="lazy" scrolling="no"></iframe>\n<p style="font:12px Arial,sans-serif;color:#5f5b5b;">Source: <a href="https://'+STUDY+'">Liquidline</a></p>';$('embedCode').select()}document.dispatchEvent(new Event('llc-resize'))};
+$('embedBtn').onclick=function(){var b=$('embedBox'),o=b.classList.toggle('open');this.setAttribute('aria-expanded',o);if(o){$('embedCode').value='<style>.ll-off{height:1020px}@media(max-width:700px){.ll-off{height:1080px}}</style>\n<iframe class="ll-off" src="'+PAGE+'" title="At the office \u2013 Liquidline" width="100%" style="border:0;width:100%;" loading="lazy" scrolling="no"></iframe>\n<p style="font:12px Arial,sans-serif;color:#5f5b5b;">Source: <a href="https://'+STUDY+'">Liquidline</a></p>';$('embedCode').select()}document.dispatchEvent(new Event('llc-resize'))};
 $('embedClose').onclick=function(){$('embedBox').classList.remove('open');$('embedBtn').setAttribute('aria-expanded','false');$('embedBtn').focus();document.dispatchEvent(new Event('llc-resize'))};
 $('copyBtn').onclick=function(){var t=$('embedCode');t.select();var ok=function(){say('Embed code copied')};if(navigator.clipboard&&window.isSecureContext)navigator.clipboard.writeText(t.value).then(ok,function(){document.execCommand('copy');ok()});else{document.execCommand('copy');ok()}};
 })();
@@ -93,6 +106,11 @@ $('copyBtn').onclick=function(){var t=$('embedCode');t.select();var ok=function(
 <script>
 (function(){function send(){try{parent.postMessage({llcHeight:document.documentElement.scrollHeight},'*')}catch(e){}}
 window.addEventListener('load',send);window.addEventListener('resize',send);document.addEventListener('llc-resize',send);setTimeout(send,400)})();
+</script>
+<script>
+(function(){var tabs=[].slice.call(document.querySelectorAll('[role=tab]'));
+function show(t,focus){tabs.forEach(function(x){var on=x===t;x.setAttribute('aria-selected',on);x.tabIndex=on?0:-1;document.getElementById(x.getAttribute('aria-controls')).hidden=!on});if(focus)t.focus();document.dispatchEvent(new Event('llc-resize'))}
+tabs.forEach(function(t,i){t.addEventListener('click',function(){show(t)});t.addEventListener('keydown',function(e){var n=e.key==='ArrowRight'?1:e.key==='ArrowLeft'?-1:0;if(n){e.preventDefault();show(tabs[(i+n+tabs.length)%tabs.length],true)}})})})();
 </script>
 </body>
 </html>

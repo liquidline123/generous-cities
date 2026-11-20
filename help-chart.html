@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>How England helps | Liquidline</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
+:root{--red:#e30613;--black:#000604;--grey:#cac7c7;--grey-40:#eae9e9}
+*{box-sizing:border-box}
+html,body{margin:0;padding:0}
+body{font-family:Poppins,Arial,sans-serif;color:var(--black);font-size:15px;line-height:1.5;background:#fff;padding:1.5rem 1.5rem 1.25rem;-webkit-text-size-adjust:100%}
+h1{font-size:1.6rem;line-height:1.15;font-weight:700;margin:0 0 .25rem}
+h1 em{font-style:normal;color:var(--red)}
+.sub{margin:0 0 1.25rem;font-size:.9rem}
+ul.chart{list-style:none;margin:0;padding:0}
+.row{display:grid;grid-template-columns:minmax(0,17rem) minmax(0,1fr) 3.6rem;align-items:center;column-gap:1rem;padding:.7rem 0;border-top:1px solid var(--grey-40)}
+.row:last-child{border-bottom:1px solid var(--grey-40)}
+.lab{font-size:.9rem;line-height:1.35;font-weight:500}
+.track{height:12px;background:var(--grey-40);border-radius:0 6px 6px 0}
+.track i{display:block;height:100%;background:var(--grey);border-radius:0 6px 6px 0}
+.row.top .track i{background:var(--red)}
+.row.top .lab{font-weight:700}
+.val{font-size:1rem;font-weight:700;text-align:right}
+.row.top .val{color:var(--red)}
+.note{font-size:.78rem;line-height:1.5;margin:1rem 0 0}
+.tools{display:flex;flex-wrap:wrap;gap:1.25rem;align-items:center;margin:1rem 0 0}
+.tools button,.embed button{font:inherit;font-size:.82rem;font-weight:500;background:none;border:0;border-bottom:1px solid var(--black);padding:0 0 1px;cursor:pointer;color:var(--black)}
+.tools button:focus-visible,.embed button:focus-visible{outline:2px solid var(--red);outline-offset:3px}
+.status{font-size:.8rem}
+.brand{margin-top:1rem}.brand img{display:block;width:150px;height:auto}
+.embed{display:none;margin:1rem 0 0;border:1px solid var(--grey);border-radius:12px;padding:1rem;background:#fff}
+.embed.open{display:block}
+.embed p{font-size:.8rem;margin:0 0 .5rem}
+.embed textarea{width:100%;height:7.5rem;font:12px/1.4 ui-monospace,Menlo,Consolas,monospace;border:1px solid var(--grey);border-radius:8px;padding:.5rem;resize:none}
+.embed .r2{display:flex;gap:1rem;margin-top:.5rem}
+@media(max-width:560px){body{padding:1rem}.row{grid-template-columns:minmax(0,1fr) 3.4rem;row-gap:.35rem}.row .track{grid-column:1 / -1;grid-row:2}.val{grid-row:1;grid-column:2}}
+.note a{color:inherit;text-decoration:underline;text-underline-offset:2px}.note a:hover{color:var(--red)}
+</style>
+</head>
+<body>
+<h1>How England <em>Helps</em></h1>
+<p class="sub">Share of people in England who say they gave unpaid help in each way last year.</p>
+<ul class="chart" aria-label="Ways people in England say they helped last year, as a percentage">
+<li class="row top"><span class="lab">Giving advice</span><span class="track"><i style="width:99.0%"></i></span><span class="val">19.8%</span></li>
+<li class="row"><span class="lab">Keeping in touch with someone who finds it hard to get out</span><span class="track"><i style="width:88.0%"></i></span><span class="val">17.6%</span></li>
+<li class="row"><span class="lab">Looking after a home or pet for someone who is away</span><span class="track"><i style="width:56.5%"></i></span><span class="val">11.3%</span></li>
+<li class="row"><span class="lab">Taking or escorting someone somewhere</span><span class="track"><i style="width:47.5%"></i></span><span class="val">9.5%</span></li>
+<li class="row"><span class="lab">Shopping or paying bills for someone</span><span class="track"><i style="width:42.0%"></i></span><span class="val">8.4%</span></li>
+<li class="row"><span class="lab">Babysitting or caring for children</span><span class="track"><i style="width:40.5%"></i></span><span class="val">8.1%</span></li>
+</ul>
+<p class="note"><strong>Source:</strong> <a href="https://liquidline.co.uk/news/generous-cities/" target="_blank" rel="noopener">Liquidline Generosity Study</a>. <strong>Additional sources:</strong> Community and Engagement Survey 2025/26 (Department for Culture, Media and Sport).</p>
+<div class="tools"><button type="button" id="embedBtn" aria-expanded="false">Embed this chart</button><span class="status" id="status" role="status"></span></div>
+<div class="embed" id="embedBox" role="dialog" aria-label="Embed this chart"><p>Copy this code and paste it into your page.</p><textarea id="embedCode" readonly></textarea><div class="r2"><button type="button" id="copyBtn">Copy code</button><button type="button" id="embedClose">Close</button></div></div>
+<div class="brand"><a href="https://liquidline.co.uk/news/generous-cities/" target="_blank" rel="noopener"><img alt="Liquidline" src="liquidline-logo.png"></a></div>
+<script>
+(function(){
+var PAGE="https://liquidline123.github.io/generous-cities/help-chart.html",STUDY="liquidline.co.uk/news/generous-cities/";
+function $(i){return document.getElementById(i)}
+if(window.self!==window.top){$('embedBtn').style.display='none'}
+function say(m){$('status').textContent=m;setTimeout(function(){if($('status').textContent===m)$('status').textContent=''},4000)}
+$('embedBtn').onclick=function(){var b=$('embedBox'),o=b.classList.toggle('open');this.setAttribute('aria-expanded',o);if(o){$('embedCode').value='<style>.ll-help{height:580px}@media(max-width:700px){.ll-help{height:740px}}</style>\n<iframe class="ll-help" src="'+PAGE+'" title="How England helps \u2013 Liquidline" width="100%" style="border:0;width:100%;" loading="lazy" scrolling="no"></iframe>\n<p style="font:12px Arial,sans-serif;color:#5f5b5b;">Source: <a href="https://'+STUDY+'">Liquidline</a></p>';$('embedCode').select()}document.dispatchEvent(new Event('llc-resize'))};
+$('embedClose').onclick=function(){$('embedBox').classList.remove('open');$('embedBtn').setAttribute('aria-expanded','false');$('embedBtn').focus();document.dispatchEvent(new Event('llc-resize'))};
+$('copyBtn').onclick=function(){var t=$('embedCode');t.select();var ok=function(){say('Embed code copied')};if(navigator.clipboard&&window.isSecureContext)navigator.clipboard.writeText(t.value).then(ok,function(){document.execCommand('copy');ok()});else{document.execCommand('copy');ok()}};
+})();
+</script>
+<script>
+(function(){function send(){try{parent.postMessage({llcHeight:document.documentElement.scrollHeight},'*')}catch(e){}}
+window.addEventListener('load',send);window.addEventListener('resize',send);document.addEventListener('llc-resize',send);setTimeout(send,400)})();
+</script>
+</body>
+</html>

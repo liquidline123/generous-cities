@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Who gets a tip? Tipping order | Liquidline</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
+:root{--red:#e30613;--black:#000604;--grey:#cac7c7;--grey-40:#eae9e9}
+*{box-sizing:border-box}
+html,body{margin:0;padding:0}
+body{font-family:Poppins,Arial,sans-serif;color:var(--black);font-size:15px;line-height:1.5;background:#fff;padding:1.5rem 1.5rem 1.25rem;-webkit-text-size-adjust:100%}
+h1{font-size:1.6rem;line-height:1.15;font-weight:700;margin:0 0 .25rem}
+h1 em{font-style:normal;color:var(--red)}
+.sub{margin:0 0 1.25rem;font-size:.9rem}
+.note{font-size:.78rem;line-height:1.5;margin:1rem 0 0}
+.tools{display:flex;flex-wrap:wrap;gap:1.25rem;align-items:center;margin:1rem 0 0}
+.tools button,.embed button{font:inherit;font-size:.82rem;font-weight:500;background:none;border:0;border-bottom:1px solid var(--black);padding:0 0 1px;cursor:pointer;color:var(--black)}
+.tools button:focus-visible,.embed button:focus-visible{outline:2px solid var(--red);outline-offset:3px}
+.status{font-size:.8rem}
+.brand{margin-top:1rem}.brand img{display:block;width:150px;height:auto}
+.embed{display:none;margin:1rem 0 0;border:1px solid var(--grey);border-radius:12px;padding:1rem;background:#fff}
+.embed.open{display:block}
+.embed p{font-size:.8rem;margin:0 0 .5rem}
+.embed textarea{width:100%;height:7.5rem;font:12px/1.4 ui-monospace,Menlo,Consolas,monospace;border:1px solid var(--grey);border-radius:8px;padding:.5rem;resize:none}
+.embed .r2{display:flex;gap:1rem;margin-top:.5rem}
+h2{font-size:1.15rem;line-height:1.25;font-weight:700;margin:2rem 0 .2rem}
+h2 em{font-style:normal;color:var(--red)}
+.note a{color:inherit;text-decoration:underline;text-underline-offset:2px}.note a:hover{color:var(--red)}
+table{width:100%;border-collapse:separate;border-spacing:0;font-size:.88rem}
+.wrap{overflow-x:auto;max-width:44rem}
+th{font-weight:600;font-size:.75rem;line-height:1.3;text-align:left;vertical-align:bottom;border-bottom:2px solid var(--black);padding:0 .75rem .45rem 0}
+th button{all:unset;cursor:pointer;display:block;font:inherit;font-weight:600}
+th button:after{content:" \2195";color:var(--grey);font-weight:400}
+th[aria-sort=ascending] button:after{content:" \2191";color:var(--red)}
+th[aria-sort=descending] button:after{content:" \2193";color:var(--red)}
+th button:focus-visible{outline:2px solid var(--red);outline-offset:2px}
+th.r,td.r{text-align:right}th.r button{text-align:right}
+td{padding:.5rem .75rem .5rem 0;border-bottom:1px solid var(--grey-40);vertical-align:top}
+td.rk{font-weight:700;width:2.4rem}
+td.nm{font-weight:600}
+tr.hot td{color:var(--red);font-weight:700}
+.dash{color:#6b6b6b}
+.sec .note{margin-top:.9rem}
+@media(max-width:600px){body{padding:1rem}th,td{padding-right:.5rem}table{font-size:.82rem}}
+.tabs{display:inline-flex;flex-wrap:wrap;gap:4px;padding:4px;border:1px solid var(--grey);border-radius:999px;margin:0 0 1.25rem}
+.tabs button{font:500 14px Poppins,Arial,sans-serif;padding:6px 18px;border:0;border-radius:999px;background:none;cursor:pointer;color:var(--black)}
+.tabs button[aria-selected=true]{background:var(--black);color:#fff}
+.tabs button:focus-visible{outline:2px solid var(--red);outline-offset:2px}
+[role=tabpanel][hidden]{display:none}
+@media(max-width:600px){.tabs button{padding:6px 14px;font-size:13px}}
+ul.chart{list-style:none;margin:0;padding:0;max-width:44rem}
+.row{display:grid;grid-template-columns:minmax(0,12rem) minmax(0,1fr) 4rem;align-items:center;column-gap:1rem;padding:.65rem 0;border-top:1px solid var(--grey-40)}
+.row:last-child{border-bottom:1px solid var(--grey-40)}
+.lab{font-size:.9rem;font-weight:500;line-height:1.35}
+.track{height:12px;background:var(--grey-40);border-radius:0 6px 6px 0}
+.track i{display:block;height:100%;background:var(--grey);border-radius:0 6px 6px 0}
+.row.top .track i{background:var(--red)}.row.top .lab{font-weight:700}
+.val{font-size:1rem;font-weight:700;text-align:right}.row.top .val{color:var(--red)}
+@media(max-width:600px){.row{grid-template-columns:minmax(0,1fr) 3.4rem;row-gap:.35rem}.row .track{grid-column:1 / -1;grid-row:2}.val{grid-row:1;grid-column:2}}
+</style>
+</head>
+<body>
+<div class="tabs" role="tablist" aria-label="Tipping charts"><button type="button" role="tab" id="tab1" aria-controls="p1" aria-selected="true">Who gets tipped</button><button type="button" role="tab" id="tab2" aria-controls="p2" aria-selected="false" tabindex="-1">Tip habits</button></div>
+<div role="tabpanel" id="p1" aria-labelledby="tab1">
+<h1>Who Gets a <em>Tip</em>?</h1>
+<p class="sub">People in 15 English cities put 12 kinds of worker in the order they would tip them. Here is the order, from first to last.</p>
+<div class="wrap"><table>
+<thead><tr><th scope="col">Rank</th><th scope="col">Kind of worker</th></tr></thead>
+<tbody>
+<tr><td class="rk">1</td><td class="nm">Waiters and waitresses</td></tr>
+<tr><td class="rk">2</td><td class="nm">Hairdressers and barbers</td></tr>
+<tr><td class="rk">3</td><td class="nm">Bar staff</td></tr>
+<tr><td class="rk">4</td><td class="nm">Coffee shop tip jars</td></tr>
+<tr><td class="rk">5</td><td class="nm">Taxi drivers</td></tr>
+<tr><td class="rk">6</td><td class="nm">Takeaway delivery drivers</td></tr>
+<tr><td class="rk">7</td><td class="nm">Hotel staff</td></tr>
+<tr><td class="rk">8</td><td class="nm">Beauty salon staff</td></tr>
+<tr><td class="rk">9</td><td class="nm">Delivery drivers</td></tr>
+<tr><td class="rk">10</td><td class="nm">Cleaners</td></tr>
+<tr><td class="rk">11</td><td class="nm">Postal workers</td></tr>
+<tr><td class="rk">12</td><td class="nm">Tradespeople</td></tr>
+</tbody></table></div>
+</div>
+<div role="tabpanel" id="p2" aria-labelledby="tab2" hidden>
+<h1>Tip <em>Habits</em></h1>
+<p class="sub">Only cities with a published figure are shown.</p>
+<h2>Who Always <em>Tips</em></h2>
+<p class="sub">Share of people who say they always tip.</p>
+<ul class="chart" aria-label="Share of people who always tip, by city">
+<li class="row top"><span class="lab">Liverpool</span><span class="track"><i style="width:94.0%"></i></span><span class="val">47%</span></li>
+<li class="row"><span class="lab">Newcastle upon Tyne</span><span class="track"><i style="width:84.0%"></i></span><span class="val">42%</span></li>
+<li class="row"><span class="lab">Manchester</span><span class="track"><i style="width:70.0%"></i></span><span class="val">35%</span></li>
+<li class="row"><span class="lab">Bristol</span><span class="track"><i style="width:68.0%"></i></span><span class="val">34%</span></li>
+<li class="row"><span class="lab">Sheffield</span><span class="track"><i style="width:66.0%"></i></span><span class="val">33%</span></li>
+<li class="row"><span class="lab">Plymouth</span><span class="track"><i style="width:64.0%"></i></span><span class="val">32%</span></li>
+<li class="row"><span class="lab">Oxford</span><span class="track"><i style="width:62.0%"></i></span><span class="val">31%</span></li>
+<li class="row"><span class="lab">Norwich</span><span class="track"><i style="width:48.0%"></i></span><span class="val">24%</span></li>
+</ul>
+<h2>The Typical <em>Tip</em></h2>
+<p class="sub">Typical tip on a £100 bill.</p>
+<ul class="chart" aria-label="Typical tip on a 100 pound bill, by city">
+<li class="row top"><span class="lab">Greater London</span><span class="track"><i style="width:99.5%"></i></span><span class="val">£9.95</span></li>
+<li class="row"><span class="lab">Brighton and Hove</span><span class="track"><i style="width:91.3%"></i></span><span class="val">£9.13</span></li>
+<li class="row"><span class="lab">Chelmsford</span><span class="track"><i style="width:85.9%"></i></span><span class="val">£8.59</span></li>
+<li class="row"><span class="lab">Birmingham</span><span class="track"><i style="width:85.7%"></i></span><span class="val">£8.57</span></li>
+<li class="row"><span class="lab">Coventry</span><span class="track"><i style="width:78.0%"></i></span><span class="val">£7.80</span></li>
+</ul>
+</div>
+<p class="note"><strong>Source:</strong> <a href="https://liquidline.co.uk/news/generous-cities/" target="_blank" rel="noopener">Liquidline Generosity Study</a>. <strong>Additional sources:</strong> takepayments Tipping Index (tipping order and always tip); Dojo (typical tip on a £100 bill).</p>
+<div class="tools"><button type="button" id="embedBtn" aria-expanded="false">Embed this page</button><span class="status" id="status" role="status"></span></div>
+<div class="embed" id="embedBox" role="dialog" aria-label="Embed this page"><p>Copy this code and paste it into your page.</p><textarea id="embedCode" readonly></textarea><div class="r2"><button type="button" id="copyBtn">Copy code</button><button type="button" id="embedClose">Close</button></div></div>
+<div class="brand"><a href="https://liquidline.co.uk/news/generous-cities/" target="_blank" rel="noopener"><img alt="Liquidline" src="liquidline-logo.png"></a></div>
+<script>
+(function(){
+var PAGE="https://liquidline123.github.io/generous-cities/hotel-tables.html",STUDY="liquidline.co.uk/news/generous-cities/";
+function $(i){return document.getElementById(i)}
+if(window.self!==window.top){$('embedBtn').style.display='none'}
+function say(m){$('status').textContent=m;setTimeout(function(){if($('status').textContent===m)$('status').textContent=''},4000)}
+$('embedBtn').onclick=function(){var b=$('embedBox'),o=b.classList.toggle('open');this.setAttribute('aria-expanded',o);if(o){$('embedCode').value='<style>.ll-hot{height:1090px}@media(max-width:700px){.ll-hot{height:1340px}}</style>\n<iframe class="ll-hot" src="'+PAGE+'" title="Who gets a tip \u2013 Liquidline" width="100%" style="border:0;width:100%;" loading="lazy" scrolling="no"></iframe>\n<p style="font:12px Arial,sans-serif;color:#5f5b5b;">Source: <a href="https://'+STUDY+'">Liquidline</a></p>';$('embedCode').select()}document.dispatchEvent(new Event('llc-resize'))};
+$('embedClose').onclick=function(){$('embedBox').classList.remove('open');$('embedBtn').setAttribute('aria-expanded','false');$('embedBtn').focus();document.dispatchEvent(new Event('llc-resize'))};
+$('copyBtn').onclick=function(){var t=$('embedCode');t.select();var ok=function(){say('Embed code copied')};if(navigator.clipboard&&window.isSecureContext)navigator.clipboard.writeText(t.value).then(ok,function(){document.execCommand('copy');ok()});else{document.execCommand('copy');ok()}};
+})();
+</script>
+<script>
+(function(){function send(){try{parent.postMessage({llcHeight:document.body.offsetHeight},'*')}catch(e){}}
+window.addEventListener('load',send);window.addEventListener('resize',send);document.addEventListener('llc-resize',send);setTimeout(send,400)})();
+</script>
+<script>
+(function(){var tabs=[].slice.call(document.querySelectorAll('[role=tab]'));
+function show(t,focus){tabs.forEach(function(x){var on=x===t;x.setAttribute('aria-selected',on);x.tabIndex=on?0:-1;document.getElementById(x.getAttribute('aria-controls')).hidden=!on});if(focus)t.focus();document.dispatchEvent(new Event('llc-resize'))}
+tabs.forEach(function(t,i){t.addEventListener('click',function(){show(t)});t.addEventListener('keydown',function(e){var n=e.key==='ArrowRight'?1:e.key==='ArrowLeft'?-1:0;if(n){e.preventDefault();show(tabs[(i+n+tabs.length)%tabs.length],true)}})})})();
+</script>
+</body>
+</html>

@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>England's most generous cities: all 39 cities | Liquidline</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
+:root{--red:#e30613;--red-mid:#c51315;--red-dark:#9a1915;--tint:#f4868c;--black:#000604;--grey:#cac7c7;--grey-40:#eae9e9;--est:#4d4d4d}
+*{box-sizing:border-box}
+html,body{margin:0;padding:0}
+body{font-family:Poppins,Arial,sans-serif;color:var(--black);font-size:15px;line-height:1.5;background:#fff;padding:1.5rem 1.5rem 1.25rem;-webkit-text-size-adjust:100%}
+h1,h2{font-family:Poppins,Arial,sans-serif;font-weight:700;margin:0;color:var(--black)}
+h1{font-size:1.6rem;line-height:1.15;margin-bottom:.25rem}
+h2{font-size:1.15rem;line-height:1.25;margin:2rem 0 .2rem}
+h1 em,h2 em{font-style:normal;color:var(--red)}
+.sub{margin:0 0 1rem;font-size:.9rem}
+.src{margin:1rem 0 0;font-size:.78rem;line-height:1.5}
+.src strong{font-weight:600}
+.est{font-style:italic;color:var(--est)}
+.tag{font-size:.65rem;font-weight:600;font-style:normal;letter-spacing:.01em;color:var(--est);margin-left:.25rem}
+.bar{display:block;height:6px;border-radius:3px;background:var(--grey-40);margin-top:.3rem;overflow:hidden}
+.bar i{display:block;height:100%;background:var(--red);border-radius:3px}
+.bar.t i{background:var(--tint)}
+.sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+
+.ctl{margin:0 0 .6rem}
+.ctl input{font:inherit;font-size:.9rem;border:1px solid var(--grey);border-radius:999px;padding:.45rem 1rem;background:#fff;color:var(--black);width:100%;max-width:22rem}
+.ctl input:focus,th button:focus-visible{outline:2px solid var(--red);outline-offset:2px}
+.count{font-size:.8rem;margin:0 0 .6rem}
+.wrap{overflow-x:auto}
+table{width:100%;min-width:660px;border-collapse:separate;border-spacing:0;font-size:.88rem}
+th{font-weight:600;font-size:.75rem;line-height:1.3;text-align:left;vertical-align:bottom;border-bottom:2px solid var(--black);padding:0 .75rem .45rem 0;background:#fff}
+th button{all:unset;cursor:pointer;display:block;font:inherit;font-weight:600}
+th button:after{content:" \2195";color:var(--grey);font-weight:400}
+th[aria-sort=ascending] button:after{content:" \2191";color:var(--red)}
+th[aria-sort=descending] button:after{content:" \2193";color:var(--red)}
+td{padding:.55rem .75rem .55rem 0;border-bottom:1px solid var(--grey-40);vertical-align:top;background:#fff}
+td.rk{font-weight:700;width:2.4rem}
+tr.top td.rk{color:var(--red)}
+td.city{font-weight:600}
+td.reg{font-size:.82rem;min-width:8rem}
+td.r{text-align:right;white-space:nowrap}
+th.r{text-align:right}
+th.r{width:7.5rem}
+th.r button{text-align:right}
+.note{font-size:.78rem;line-height:1.5;margin:1rem 0 0}
+.empty{padding:1rem 0;font-weight:600}
+.pg{display:flex;flex-wrap:wrap;gap:.4rem;align-items:center;margin:1rem 0 0}
+.pg button{font:inherit;font-size:.85rem;font-weight:600;min-width:2.4rem;height:2.4rem;padding:0 .9rem;border:1px solid var(--grey);border-radius:999px;background:#fff;color:var(--black);cursor:pointer}
+.pg button:hover:not(:disabled){border-color:var(--red);color:var(--red)}
+.pg button[aria-current=page]{background:var(--red);border-color:var(--red);color:#fff}
+.pg button:disabled{opacity:.4;cursor:default}
+.pg button:focus-visible{outline:2px solid var(--red);outline-offset:2px}
+
+.tools{display:flex;flex-wrap:wrap;gap:1.25rem;align-items:center;margin:1rem 0 0}
+.tools button,.embed button{font:inherit;font-size:.82rem;font-weight:500;background:none;border:0;border-bottom:1px solid var(--black);padding:0 0 1px;cursor:pointer;color:var(--black)}
+.tools button:focus-visible,.embed button:focus-visible{outline:2px solid var(--red);outline-offset:3px}
+.tools button:disabled{opacity:.5;cursor:default}
+.status{font-size:.8rem}
+.brand{margin-top:1rem}.brand img{display:block;width:150px;height:auto}
+.embed{display:none;margin:1rem 0 0;border:1px solid var(--grey);border-radius:12px;padding:1rem;background:#fff}
+.embed.open{display:block}
+.embed p{font-size:.8rem;margin:0 0 .5rem}
+.embed textarea{width:100%;height:7.5rem;font:12px/1.4 ui-monospace,Menlo,Consolas,monospace;border:1px solid var(--grey);border-radius:8px;padding:.5rem;resize:none}
+.embed .r2{display:flex;gap:1rem;margin-top:.5rem}
+.shot{position:absolute;left:-9999px;top:0;width:760px;background:#fff;padding:32px;font-family:Poppins,Arial,sans-serif;color:var(--black)}
+.shot h1{font-size:30px}.shot .sub{font-size:15px;margin:4px 0 16px}
+.shot .srow{display:grid;grid-template-columns:34px 250px 1fr 56px;align-items:center;column-gap:14px;padding:8px 0;border-top:1px solid var(--grey-40)}
+.shot .rank,.shot .score{font-size:16px;font-weight:600}.shot .rank{color:var(--red)}.shot .score{text-align:right}
+.shot .nm{font-size:17px;font-weight:500}
+.shot .track{height:10px;background:var(--grey-40);border-radius:0 5px 5px 0}.shot .track i{display:block;height:100%;background:var(--grey);border-radius:0 5px 5px 0}
+.shot .win{background:rgba(227,6,19,.05)}.shot .win .track i{background:var(--red)}
+.shot .sfoot{font-size:13px;margin:16px 0 0}.shot .slogo{display:block;width:200px;height:auto;margin-top:20px}
+@media(max-width:720px){
+body{padding:1rem}
+th:nth-child(1),td:nth-child(1){position:sticky;left:0;z-index:2}
+th:nth-child(2),td:nth-child(2){position:sticky;left:2.4rem;z-index:2;padding-right:.9rem;box-shadow:6px 0 6px -6px rgba(0,6,4,.18)}
+}
+</style>
+</head>
+<body>
+<h1>England's Most <em>Generous</em> Cities</h1>
+<p class="sub">All 39 cities, ranked by generosity score. Search for your city, click a column to sort, or use the page buttons to see more cities.</p>
+<div class="ctl"><label class="sr" for="q">Search cities</label><input id="q" type="search" placeholder="Search for your city" autocomplete="off"></div>
+<p class="count" id="n" aria-live="polite">Showing 1 to 10 of 39 cities</p>
+<div class="wrap">
+<table id="t">
+<thead><tr>
+<th scope="col" aria-sort="ascending"><button type="button" data-n="1">Rank</button></th>
+<th scope="col"><button type="button">City</button></th>
+<th scope="col"><button type="button">Region</button></th>
+<th scope="col" class="r"><button type="button" data-n="1">Score (out of 100)</button></th>
+<th scope="col" class="r"><button type="button" data-n="1">Helped last month</button></th>
+<th scope="col" class="r"><button type="button" data-n="1">Volunteered last month</button></th>
+<th scope="col" class="r"><button type="button" data-n="1">Typical tip on a £100 bill</button></th>
+<th scope="col" class="r"><button type="button" data-n="1">Take their turn at the tea round</button></th>
+</tr></thead>
+<tbody></tbody>
+</table>
+</div>
+<p class="empty" id="e" hidden>No cities match. Try another name.</p>
+<nav class="pg" id="pg" aria-label="Table pages"></nav>
+<p class="note"><strong>Source:</strong> Liquidline Generosity Study. <strong>Additional sources:</strong> Community and Engagement Survey 2025/26 (Department for Culture, Media and Sport); tip amounts: Dojo.</p>
+<div class="tools"><button type="button" id="embedBtn" aria-expanded="false">Embed this table</button><button type="button" id="dlBtn">Download top 10 image</button><span class="status" id="status" role="status"></span></div>
+<div class="embed" id="embedBox" role="dialog" aria-label="Embed this table"><p>Copy this code and paste it into your page.</p><textarea id="embedCode" readonly></textarea><div class="r2"><button type="button" id="copyBtn">Copy code</button><button type="button" id="embedClose">Close</button></div></div>
+<div class="brand"><a href="https://liquidline.co.uk/news/generous-cities/" target="_blank" rel="noopener"><img alt="Liquidline" src="liquidline-logo.png"></a></div>
+<div class="shot" id="shot" aria-hidden="true"></div>
+<script defer src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+
+<script>
+(function(){
+var D=[[1,"Lancaster","North West",73.4,26.6,26.7,6.5,69,1,1],[2,"Oxford","South East",70.3,25.2,25.1,6.5,76,1,1],[3,"Manchester","North West",70.1,28.5,18.1,5.8,80,0,1],[4,"Bradford","Yorkshire and The Humber",69.2,29.2,16.4,6.1,73,0,1],[5,"York","Yorkshire and The Humber",61.8,24.7,22.5,6.1,78,0,1],[6,"Winchester","South East",61.7,23.7,27.4,7,80,1,1],[7,"Leicester","East Midlands",60.6,28.3,15.4,7.4,80,0,1],[8,"Preston","North West",57.1,27.9,14.5,6.5,69,1,1],[9,"Newcastle upon Tyne","North East",56.2,26.6,18.1,6.8,83,0,1],[10,"Southampton","South East",54.3,26.4,17.4,7,83,1,1],[11,"Birmingham","West Midlands",53.3,26.6,16.3,8.57,85,0,0],[12,"Sheffield","Yorkshire and The Humber",53.1,26.2,18.7,5.9,66,0,1],[13,"Southend-on-Sea","East of England",51.7,24,20.9,5.4,64,1,1],[14,"Colchester","East of England",50.3,24.4,21.4,5.4,64,1,1],[15,"Bristol","South West",49.7,24.7,19,5.6,62,0,1],[16,"Peterborough","East of England",49.2,25.5,17.3,5.4,64,0,1],[17,"Norwich","East of England",48.7,24.6,16.7,5,60,1,1],[18,"Nottingham","East Midlands",48.5,26.1,17.3,5.1,85,0,1],[19,"Liverpool","North West",48.2,26.1,14.3,7.2,69,0,1],[20,"Wolverhampton","West Midlands",47.7,26.9,14,5.4,85,0,1],[21,"Greater London","London",47.3,24.5,17,9.95,67,0,0],[22,"Milton Keynes","South East",46.9,24.5,18.2,7,80,0,1],[23,"Brighton and Hove","South East",46.2,23.7,17.1,9.13,62,0,0],[24,"Lincoln","East Midlands",44.7,25.2,17.1,5.8,88,1,1],[25,"Leeds","Yorkshire and The Humber",42.4,24.6,17.9,6.5,87,0,1],[26,"Portsmouth","South East",40.2,23.5,18.1,7,76,1,1],[27,"Coventry","West Midlands",38.9,24.2,17.2,7.8,76,0,0],[28,"Plymouth","South West",38.5,24.5,14.8,7.3,76,0,1],[29,"St Albans","East of England",37.7,19.9,25.8,5.4,64,1,1],[30,"Hull","Yorkshire and The Humber",37.5,26.2,12.3,6.1,73,0,1],[31,"Chelmsford","East of England",37.1,22.9,18.9,8.59,62,1,0],[32,"Salford","North West",35.9,24.5,14.2,6.5,69,0,1],[33,"Derby","East Midlands",31.9,23.7,14.8,5.8,85,0,1],[34,"Doncaster","Yorkshire and The Humber",27.2,23.8,13,6.1,73,0,1],[35,"Sunderland","North East",26.6,23.7,13.5,6.5,73,0,1],[36,"Wakefield","Yorkshire and The Humber",25.6,23.5,13,6.1,73,0,1],[37,"Worcester","West Midlands",25.3,21.9,17.5,7.3,80,1,1],[38,"Stoke-on-Trent","West Midlands",24.2,23.2,12.7,7.5,80,0,1],[39,"Gloucester","South West",16.9,20.7,16.8,5.2,67,1,1]];
+var PER=10,page=1;
+var t=document.getElementById('t'),tb=t.tBodies[0],q=document.getElementById('q'),n=document.getElementById('n'),e=document.getElementById('e'),pg=document.getElementById('pg');
+var ths=[].slice.call(t.tHead.rows[0].cells);
+function esc(x){return String(x).replace(/&/g,'&amp;').replace(/</g,'&lt;')}
+var rows=D.map(function(d){var tr=document.createElement('tr');if(d[0]<=10)tr.className='top';
+tr.innerHTML='<td class="rk">'+d[0]+'</td><td class="city">'+esc(d[1])+'</td><td class="reg">'+esc(d[2])+'</td><td class="r">'+d[3].toFixed(1)+'</td><td class="r">'+d[4].toFixed(1)+'%</td><td class="r">'+d[5].toFixed(1)+'%</td><td class="r">'+'\u00a3'+d[6].toFixed(2)+'</td><td class="r">'+d[7]+'%'+'</td>';
+tr.d=d;tb.appendChild(tr);return tr});
+function match(tr){var s=q.value.trim().toLowerCase();return !s||tr.d[1].toLowerCase().indexOf(s)>-1}
+function render(){
+var m=rows.filter(match),pages=Math.max(1,Math.ceil(m.length/PER));
+if(page>pages)page=pages;
+var a=(page-1)*PER,b=a+PER;
+rows.forEach(function(tr){tr.hidden=true});
+m.slice(a,b).forEach(function(tr){tr.hidden=false});
+e.hidden=m.length>0;
+n.textContent=m.length?('Showing '+(a+1)+' to '+Math.min(b,m.length)+' of '+m.length+' cities'):'Showing 0 cities';
+pg.innerHTML='';pg.hidden=pages<2;
+function btn(label,p,dis,cur,aria){var x=document.createElement('button');x.type='button';x.textContent=label;if(aria)x.setAttribute('aria-label',aria);x.disabled=dis;if(cur)x.setAttribute('aria-current','page');x.addEventListener('click',function(){page=p;render()});pg.appendChild(x)}
+btn('Previous',page-1,page===1,false,'Previous page');
+for(var i=1;i<=pages;i++)btn(String(i),i,false,i===page,'Page '+i);
+btn('Next',page+1,page===pages,false,'Next page');
+document.dispatchEvent(new Event('llc-resize'))}
+var KEY=[0,1,2,3,4,5,6,7];
+ths.forEach(function(th,i){th.firstChild.addEventListener('click',function(){
+var num=th.firstChild.getAttribute('data-n')==='1',k=KEY[i];
+var cur=th.getAttribute('aria-sort');
+var dir=cur==='ascending'?-1:(cur==='descending'?1:(num&&i>0?-1:1));
+ths.forEach(function(o){o.removeAttribute('aria-sort')});
+th.setAttribute('aria-sort',dir===1?'ascending':'descending');
+rows.sort(function(x,y){var p=x.d[k],r=y.d[k];if(!num){p=String(p).toLowerCase();r=String(r).toLowerCase()}return (p<r?-1:p>r?1:0)*dir});
+rows.forEach(function(x){tb.appendChild(x)});
+page=1;render()})});
+q.addEventListener('input',function(){page=1;render()});
+render();
+var PAGE="https://liquidline123.github.io/generous-cities/england-table.html",STUDY="liquidline.co.uk/news/generous-cities/";
+function $(i){return document.getElementById(i)}
+if(window.self!==window.top){$('embedBtn').style.display='none'}
+function say(m){$('status').textContent=m;setTimeout(function(){if($('status').textContent===m)$('status').textContent=''},4000)}
+$('embedBtn').onclick=function(){var b=$('embedBox'),o=b.classList.toggle('open');this.setAttribute('aria-expanded',o);if(o){$('embedCode').value='<style>.ll-gen{height:830px}@media(max-width:700px){.ll-gen{height:1000px}}</style>\n<iframe class="ll-gen" src="'+PAGE+'" title="England\'s most generous cities \u2013 Liquidline" width="100%" style="border:0;width:100%;" loading="lazy" scrolling="no"></iframe>\n<p style="font:12px Arial,sans-serif;color:#5f5b5b;">Source: <a href="https://'+STUDY+'">Liquidline</a></p>';$('embedCode').select()}document.dispatchEvent(new Event('llc-resize'))};
+$('embedClose').onclick=function(){$('embedBox').classList.remove('open');$('embedBtn').setAttribute('aria-expanded','false');$('embedBtn').focus();document.dispatchEvent(new Event('llc-resize'))};
+$('copyBtn').onclick=function(){var t=$('embedCode');t.select();var ok=function(){say('Embed code copied')};if(navigator.clipboard&&window.isSecureContext)navigator.clipboard.writeText(t.value).then(ok,function(){document.execCommand('copy');ok()});else{document.execCommand('copy');ok()}};
+$('dlBtn').onclick=function(){
+if(typeof html2canvas!=='function'){say('Sorry, the image could not be made.');return}
+var b=this;b.disabled=true;say('Preparing image\u2026');
+var h='<h1>England\'s Most <em style="font-style:normal;color:#e30613">Generous</em> Cities</h1><p class="sub">Generosity score out of 100. Top 10 of 39 cities.</p>';
+D.slice(0,10).forEach(function(d){h+='<div class="srow'+(d[0]===1?' win':'')+'"><span class="rank">'+d[0]+'</span><span class="nm">'+esc(d[1])+'</span><span class="track"><i style="width:'+d[3]+'%"></i></span><span class="score">'+d[3].toFixed(1)+'</span></div>'});
+h+='<p class="sfoot"><b>Source:</b> Liquidline Generosity Study.<br>Full study: <b>'+STUDY+'</b></p><img class="slogo" alt="Liquidline" src="'+document.querySelector('.brand img').src+'">';
+$('shot').innerHTML=h;
+(document.fonts?document.fonts.ready:Promise.resolve()).then(function(){return html2canvas($('shot'),{scale:2,backgroundColor:'#ffffff'})}).then(function(cv){return new Promise(function(r){cv.toBlob(r,'image/png')})}).then(function(blob){var a=document.createElement('a');a.href=URL.createObjectURL(blob);a.download='liquidline-englands-most-generous-cities.png';document.body.appendChild(a);a.click();a.remove();setTimeout(function(){URL.revokeObjectURL(a.href)},1000);b.disabled=false;say('Image downloaded')}).catch(function(){b.disabled=true;b.disabled=false;say('Sorry, the image could not be made.')});
+};
+})();
+</script>
+<script>
+(function(){function send(){try{parent.postMessage({llcHeight:document.documentElement.scrollHeight},'*')}catch(e){}}
+window.addEventListener('load',send);window.addEventListener('resize',send);document.addEventListener('llc-resize',send);setTimeout(send,400)})();
+</script>
+</body>
+</html>

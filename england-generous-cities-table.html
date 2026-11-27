@@ -81,7 +81,7 @@ th:nth-child(2),td:nth-child(2){position:sticky;left:2.4rem;z-index:2;padding-ri
 </style>
 </head>
 <body>
-<h1>England's Most <em>Generous</em> Cities</h1>
+<h1>England's <em>Most Generous Cities</em></h1>
 <p class="sub">All 39 cities, ranked by generosity score. Search for your city, click a column to sort, or use the page buttons to see more cities.</p>
 <div class="ctl"><label class="sr" for="q">Search cities</label><input id="q" type="search" placeholder="Search for your city" autocomplete="off"></div>
 <p class="count" id="n" aria-live="polite">Showing 1 to 10 of 39 cities</p>
@@ -156,7 +156,7 @@ $('copyBtn').onclick=function(){var t=$('embedCode');t.select();var ok=function(
 $('dlBtn').onclick=function(){
 if(typeof html2canvas!=='function'){say('Sorry, the image could not be made.');return}
 var b=this;b.disabled=true;say('Preparing image\u2026');
-var h='<h1>England\'s Most <em style="font-style:normal;color:#e30613">Generous</em> Cities</h1><p class="sub">Generosity score out of 100. Top 10 of 39 cities.</p>';
+var h='<h1>England\'s <em style="font-style:normal;color:#e30613">Most Generous Cities</em></h1><p class="sub">Generosity score out of 100. Top 10 of 39 cities.</p>';
 D.slice(0,10).forEach(function(d){h+='<div class="srow'+(d[0]===1?' win':'')+'"><span class="rank">'+d[0]+'</span><span class="nm">'+esc(d[1])+'</span><span class="track"><i style="width:'+d[3]+'%"></i></span><span class="score">'+d[3].toFixed(1)+'</span></div>'});
 h+='<p class="sfoot"><b>Source:</b> Liquidline Generosity Study.<br>Full study: <b>'+STUDY+'</b></p><img class="slogo" alt="Liquidline" src="'+document.querySelector('.brand img').src+'">';
 $('shot').innerHTML=h;
